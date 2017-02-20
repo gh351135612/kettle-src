@@ -280,6 +280,8 @@
       <sourceFolder url="file://$MODULE_DIR$/engine" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/dbdialog" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ui" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/test" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/plugins" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="inheritedJdk" />
@@ -1463,33 +1465,6 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
-      <library name="kettle-engine-test-6.1.0.1-196.jar">
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/lib/kettle-engine-test-6.1.0.1-196.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="kettle-ui-swt-6.1.0.1-196.jar">
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/lib/kettle-ui-swt-6.1.0.1-196.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="kettle5-log4j-plugin-6.1.0.1-196.jar">
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/lib/kettle5-log4j-plugin-6.1.0.1-196.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
       <library name="ldapjdk-20000524.jar">
         <CLASSES>
           <root url="jar://$MODULE_DIR$/lib/ldapjdk-20000524.jar!/" />
@@ -2659,5 +2634,9 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="mysql-connector-java" level="project" />
+    <orderEntry type="library" name="kettle-ui-swt-6.1.0.1-196" level="project" />
+    <orderEntry type="library" name="ojdbc7" level="project" />
+    <orderEntry type="library" name="jsoup-1.8.1" level="project" />
   </component>
 </module>
