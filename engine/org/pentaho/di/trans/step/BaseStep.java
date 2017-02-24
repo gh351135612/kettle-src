@@ -23,44 +23,13 @@
 
 package org.pentaho.di.trans.step;
 
-import java.io.Closeable;
-import java.io.IOException;
-import java.net.ServerSocket;
-import java.text.DecimalFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Calendar;
-import java.util.Collections;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Hashtable;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.concurrent.locks.ReentrantReadWriteLock;
-
-import org.pentaho.di.core.BlockingRowSet;
-import org.pentaho.di.core.Const;
-import org.pentaho.di.core.ExtensionDataInterface;
-import org.pentaho.di.core.ResultFile;
-import org.pentaho.di.core.RowMetaAndData;
-import org.pentaho.di.core.RowSet;
+import org.pentaho.di.core.*;
 import org.pentaho.di.core.exception.KettleException;
 import org.pentaho.di.core.exception.KettleRowException;
 import org.pentaho.di.core.exception.KettleStepException;
 import org.pentaho.di.core.exception.KettleValueException;
-import org.pentaho.di.core.logging.KettleLogStore;
-import org.pentaho.di.core.logging.LogChannelInterface;
-import org.pentaho.di.core.logging.LogLevel;
-import org.pentaho.di.core.logging.LoggingObjectInterface;
-import org.pentaho.di.core.logging.LoggingObjectType;
-import org.pentaho.di.core.row.RowDataUtil;
-import org.pentaho.di.core.row.RowMeta;
-import org.pentaho.di.core.row.RowMetaInterface;
-import org.pentaho.di.core.row.ValueMeta;
-import org.pentaho.di.core.row.ValueMetaInterface;
+import org.pentaho.di.core.logging.*;
+import org.pentaho.di.core.row.*;
 import org.pentaho.di.core.variables.VariableSpace;
 import org.pentaho.di.core.variables.Variables;
 import org.pentaho.di.i18n.BaseMessages;
@@ -80,6 +49,15 @@ import org.pentaho.di.trans.steps.mappinginput.MappingInput;
 import org.pentaho.di.trans.steps.mappingoutput.MappingOutput;
 import org.pentaho.di.www.SocketRepository;
 import org.pentaho.metastore.api.IMetaStore;
+
+import java.io.Closeable;
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.text.DecimalFormat;
+import java.util.*;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 /**
  * This class can be extended for the actual row processing of the implemented step.
@@ -1982,7 +1960,7 @@ public class BaseStep implements VariableSpace, StepInterface, LoggingObjectInte
    * @throws KettleRowException
    *           the kettle row exception
    */
-  protected void safeModeChecking( RowMetaInterface row ) throws KettleRowException {
+    protected void safeModeChecking( RowMetaInterface row ) throws KettleRowException {
     if ( row == null ) {
       return;
     }

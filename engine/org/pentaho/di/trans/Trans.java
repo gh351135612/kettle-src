@@ -204,7 +204,7 @@ public class Trans implements VariableSpace, NamedParams, HasLogChannelInterface
   /** The parent logging object interface (this could be a transformation or a job). */
   private LoggingObjectInterface parent;
 
-  /** The name of the mapping step that executes this transformation in case this is a mapping. */
+  /** The name of the mapping step that  executes this transformation in case this is a mapping. */
   private String mappingStepName;
 
   /** Indicates that we want to monitor the running transformation in a GUI. */
